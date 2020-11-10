@@ -1,15 +1,24 @@
 <template>
 	<Icon name="add" size="40"></Icon>
 	<Icon name="alipay" color="red"></Icon>
+	<hr>
+	<Button>click</Button>
+	<Button type="primary">primary</Button>
+	<Button type="info">info</Button>
+	<Button type="warning">warning</Button>
+	<Button type="success">success</Button>
+	<Button type="error">error</Button>
+	<Button type="text">text</Button>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Icon from './components/Icon/index.vue'
+import Button from './components/Button/index.vue'
 
 export default defineComponent({
 	name: 'App',
-	components: { Icon },
+	components: { Icon, Button },
 });
 </script>
 
@@ -19,7 +28,6 @@ export default defineComponent({
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
-	color: #2c3e50;
 	margin-top: 60px;
 }
 </style>

@@ -1,0 +1,29 @@
+@import "../common/var";
+
+.iS-button {
+	display: inline-block;
+	padding: 8px 16px;
+	border-radius: @border-radius;
+	cursor: pointer;
+	color: @white;
+	&-default {
+		background: @white;
+		border: 1px solid @border-color-base;
+		color: @text-color;
+	}
+	&-primary {
+		background: @primary-color;
+	}
+	&-info {
+		background: @info-color;
+	}
+	&-warning {
+		background: @warning-color;
+	}
+	&-success {
+		background: @success-color;
+	}
+	&-error {
+		background: @error-color;
+	}
+}

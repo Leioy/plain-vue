@@ -1,5 +1,5 @@
 <template>
-	<svg class="y-icon" :style="styleObj">
+	<svg class="iS-icon" :style="styleObj">
 		<use :xlink:href="`#icon-${name}`"></use>
 	</svg>
 </template>
