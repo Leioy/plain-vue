@@ -1,14 +1,60 @@
 @import "../common/var";
 
+.disabled {
+	color: @text-color-disabled;
+	background: @background-color-disabled;
+	border-color: @border-color-disabled;
+	cursor: not-allowed;
+}
+
+.text-disabled {
+	color: @text-color-disabled;
+	background: @background-color-disabled;
+	cursor: not-allowed;
+}
+
 .iS-button {
 	display: inline-block;
-	padding: 8px 16px;
+	padding: @button-padding-base;
+	line-height: 1;
 	border-radius: @border-radius;
 	cursor: pointer;
 	color: @white;
 	outline: none;
 	border: 1px solid transparent;
 	transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+	.iS-icon + span {
+		margin-left: 4px;
+	}
+	&.iS-button-small {
+		padding: @button-padding-small;
+	}
+	&.iS-button-large {
+		padding: @button-padding-large;
+	}
+	&.iS-button-loading {
+		pointer-events: none;
+		position: relative;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: -1px;
+			right: -1px;
+			bottom: -1px;
+			left: -1px;
+			background: #fff;
+			opacity: .35;
+			border-radius: inherit;
+			transition: opacity .25s;
+		}
+		.iS-icon {
+			animation: loading 1.5s linear infinite;
+			& + span {
+				margin-left: 4px;
+			}
+		}
+	}
 	& + .iS-button {
 		margin-left: 10px;
 	}
@@ -16,94 +62,178 @@
 		background: @white;
 		border: 1px solid @border-color-base;
 		color: @text-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		&:hover {
 			border-color: @border-color-active;
 			color: @primary-color;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			border-color: darken(@border-color-active, 5%);
 			color: darken(@border-color-active, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-primary {
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		background: @primary-color;
 		&:hover {
 			background: lighten(@primary-color, 10%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			background: darken(@primary-color, 5%);
 			border-color: darken(@primary-color, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-info {
 		background: @info-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		&:hover {
 			background: lighten(@info-color, 10%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			background: darken(@info-color, 5%);
 			border-color: darken(@info-color, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-warning {
 		background: @warning-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		&:hover {
 			background: lighten(@warning-color, 10%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			background: darken(@warning-color, 5%);
 			border-color: darken(@warning-color, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-success {
 		background: @success-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		&:hover {
 			background: lighten(@success-color, 10%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			background: darken(@success-color, 5%);
 			border-color: darken(@success-color, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-error {
 		background: @error-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.disabled()
+		}
 		&:hover {
 			background: lighten(@error-color, 10%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:active {
 			background: darken(@error-color, 5%);
 			border-color: darken(@error-color, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.disabled()
+			}
 		}
 	}
 	&-text {
 		background-color: transparent;
 		color: @text-color;
+		&.iS-button-disabled:not(.iS-button-loading) {
+			.text-disabled()
+		}
 		&:hover {
 			color: @primary-color;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.text-disabled()
+			}
 		}
 		&:active {
 			color: darken(@border-color-active, 5%);
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.text-disabled()
+			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
+			&.iS-button-disabled:not(.iS-button-loading) {
+				.text-disabled()
+			}
 		}
 	}
 }

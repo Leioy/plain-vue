@@ -2,13 +2,14 @@
 	<Icon name="add" size="40"></Icon>
 	<Icon name="alipay" color="red"></Icon>
 	<hr>
-	<Button>default</Button>
-	<Button type="primary">primary</Button>
-	<Button type="info">info</Button>
-	<Button type="warning">warning</Button>
-	<Button type="success">success</Button>
-	<Button type="error">error</Button>
-	<Button type="text">text</Button>
+	<Button loading disabled size="large">default</Button>
+	<Button type="primary" disabled size="small">primary</Button>
+	<Button type="info" disabled>info</Button>
+	<Button type="warning" disabled>warning</Button>
+	<Button type="success" disabled>success</Button>
+	<Button type="error" disabled>error</Button>
+	<Button type="text" loading  disabled>text</Button>
+	<Button type="primary" disabled loading>加载中</Button>
 </template>
 
 <script lang="ts">

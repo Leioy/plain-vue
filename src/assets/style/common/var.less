@@ -9,12 +9,29 @@
 
 // base
 @text-color: #515a6e;
+@text-color-disabled: #c5c8ce;
+@background-color-disabled: #f7f7f7;
 
 // border-color
 @border-color-base: #dcdee2;
 @border-color-active: #2b85e4;
+@border-color-disabled: #dcdee2;
 @border-radius: 4px;
 
+// button
+@button-padding-small: 4px 12px;
+@button-padding-base: 8px 16px;
+@button-padding-large: 12px 20px;
+
 //shadow
-@box-shadow: 0 0 0 2px rgba(45,140,240,.2);
+@box-shadow: 0 0 0 2px rgba(45, 140, 240, .2);
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 
