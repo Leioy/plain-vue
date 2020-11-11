@@ -2,7 +2,7 @@
 	<Icon name="add" size="40"></Icon>
 	<Icon name="alipay" color="red"></Icon>
 	<hr>
-	<Button>click</Button>
+	<Button>default</Button>
 	<Button type="primary">primary</Button>
 	<Button type="info">info</Button>
 	<Button type="warning">warning</Button>
