@@ -1,17 +1,5 @@
 @import "../common/var";
-
-.disabled {
-	color: @text-color-disabled;
-	background: @background-color-disabled;
-	border-color: @border-color-disabled;
-	cursor: not-allowed;
-}
-
-.text-disabled {
-	color: @text-color-disabled;
-	background: @background-color-disabled;
-	cursor: not-allowed;
-}
+@import "../common/mixin";
 
 .iS-button {
 	display: inline-block;
@@ -35,19 +23,7 @@
 	&.iS-button-loading {
 		pointer-events: none;
 		position: relative;
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			top: -1px;
-			right: -1px;
-			bottom: -1px;
-			left: -1px;
-			background: #fff;
-			opacity: .35;
-			border-radius: inherit;
-			transition: opacity .25s;
-		}
+		.overlay-mixin();
 		.iS-icon {
 			animation: loading 1.5s linear infinite;
 			& + span {
@@ -62,177 +38,210 @@
 		background: @white;
 		border: 1px solid @border-color-base;
 		color: @text-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-loading {
+			color: @text-color-disabled;
+		}
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@text-color-disabled, @white, @white);
 		}
 		&:hover {
 			border-color: @border-color-active;
 			color: @primary-color;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, @white, @white);
 			}
 		}
 		&:active {
 			border-color: darken(@border-color-active, 5%);
 			color: darken(@border-color-active, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, @white, @white);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, @white, @white);
 			}
 		}
 	}
 	&-primary {
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@white, @primary-color, @primary-color);
 		}
 		background: @primary-color;
 		&:hover {
 			background: lighten(@primary-color, 10%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @primary-color, @primary-color);
 			}
 		}
 		&:active {
 			background: darken(@primary-color, 5%);
 			border-color: darken(@primary-color, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @primary-color, @primary-color);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @primary-color, @primary-color);
 			}
 		}
 	}
 	&-info {
 		background: @info-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@white, @info-color, @info-color);
 		}
 		&:hover {
 			background: lighten(@info-color, 10%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @info-color, @info-color);
 			}
 		}
 		&:active {
 			background: darken(@info-color, 5%);
 			border-color: darken(@info-color, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @info-color, @info-color);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @info-color, @info-color);
 			}
 		}
 	}
 	&-warning {
 		background: @warning-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@white, @warning-color, @warning-color);
 		}
 		&:hover {
 			background: lighten(@warning-color, 10%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @warning-color, @warning-color);
 			}
 		}
 		&:active {
 			background: darken(@warning-color, 5%);
 			border-color: darken(@warning-color, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @warning-color, @warning-color);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @warning-color, @warning-color);
 			}
 		}
 	}
 	&-success {
 		background: @success-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@white, @success-color, @success-color);
 		}
 		&:hover {
 			background: lighten(@success-color, 10%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @success-color, @success-color);
 			}
 		}
 		&:active {
 			background: darken(@success-color, 5%);
 			border-color: darken(@success-color, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @success-color, @success-color);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @success-color, @success-color);
 			}
 		}
 	}
 	&-error {
 		background: @error-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.disabled()
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@white, @error-color, @error-color);
 		}
 		&:hover {
 			background: lighten(@error-color, 10%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @error-color, @error-color);
 			}
 		}
 		&:active {
 			background: darken(@error-color, 5%);
 			border-color: darken(@error-color, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @error-color, @error-color);
 			}
 		}
 		&:focus {
 			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@white, @error-color, @error-color);
 			}
 		}
 	}
 	&-text {
 		background-color: transparent;
 		color: @text-color;
-		&.iS-button-disabled:not(.iS-button-loading) {
-			.text-disabled()
+		&.iS-button-loading {
+			color: @text-color-disabled;
+		}
+		&.iS-button-disabled {
+			.overlay-mixin();
+			.disabled-mixin(@text-color-disabled, transparent, transparent);
 		}
 		&:hover {
 			color: @primary-color;
 			&.iS-button-disabled:not(.iS-button-loading) {
-				.text-disabled()
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, transparent, transparent);
 			}
 		}
 		&:active {
-			color: darken(@border-color-active, 5%);
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.text-disabled()
+			color: darken(@border-color-active, 10%);
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, transparent, transparent);
 			}
 		}
 		&:focus {
-			box-shadow: @box-shadow;
-			&.iS-button-disabled:not(.iS-button-loading) {
-				.text-disabled()
+			&.iS-button-disabled {
+				.overlay-mixin();
+				.disabled-mixin(@text-color-disabled, transparent, transparent);
 			}
 		}
 	}
