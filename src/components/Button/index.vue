@@ -42,7 +42,13 @@ export default defineComponent({
 		loading: Boolean,
 		disabled: Boolean,
 	},
-	setup (props) {
+	// 这里完全可以不用自定义事件，这里这样写是为了熟悉vue3
+	emits: {
+		click: (payload: MouseEvent) => {
+			return payload instanceof MouseEvent
+		},
+	},
+	setup (props, { emit }) {
 		const { type, disabled, loading, round, size } = props as IButtonProps
 		const classObj = computed(() => {
 			return [
@@ -56,7 +62,9 @@ export default defineComponent({
 				},
 			]
 		})
-		const click = () => {console.log(1)}
+		const click = (e: MouseEvent) => {
+			emit('click', e)
+		}
 		return { classObj, click }
 	},
 })
