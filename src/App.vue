@@ -2,9 +2,11 @@
 	<Icon name="add" size="40"></Icon>
 	<Icon name="alipay" color="red"></Icon>
 	<hr>
-	<Button size="large">default</Button>
+	<Button round size="large">default</Button>
 	<Button>default</Button>
-	<Button type="primary">primary</Button>
+	<Button round type="primary">primary</Button>
+	<Button round size="small" type="primary">primary</Button>
+	<Button round size="large" type="primary">primary</Button>
 	<Button type="info">info</Button>
 	<Button type="warning">warning</Button>
 	<Button type="success">success</Button>

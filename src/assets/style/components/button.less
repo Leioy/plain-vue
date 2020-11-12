@@ -3,7 +3,8 @@
 
 .iS-button {
 	display: inline-block;
-	padding: @button-padding-base;
+	padding: 0 @button-padding-base;
+	min-height: @button-height-base;
 	line-height: 1;
 	border-radius: @border-radius;
 	cursor: pointer;
@@ -11,14 +12,25 @@
 	outline: none;
 	border: 1px solid transparent;
 	transition: color .2s linear, background-color .2s linear, border .2s linear, box-shadow .2s linear;
+	&.iS-button-round {
+		border-radius: @button-height-base;
+	}
 	.iS-icon + span {
 		margin-left: 4px;
 	}
 	&.iS-button-small {
-		padding: @button-padding-small;
+		padding: 0 @button-padding-small;
+		min-height: @button-height-small;
+		&.iS-button-round {
+			border-radius: @button-height-small;
+		}
 	}
 	&.iS-button-large {
-		padding: @button-padding-large;
+		padding: 0 @button-padding-large;
+		min-height: @button-height-large;
+		&.iS-button-round {
+			border-radius: @button-height-large;
+		}
 	}
 	&.iS-button-loading {
 		pointer-events: none;

@@ -57,7 +57,7 @@ export default defineComponent({
 				{
 					'iS-button-disabled': disabled,
 					'iS-button-loading': loading,
-					'is-button-round': round,
+					'iS-button-round': round,
 					[`iS-button-${size}`]: size,
 				},
 			]
