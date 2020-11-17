@@ -1,13 +1,13 @@
 <template>
 	<button :class="classObj" @click="click" :disabled="disabled">
-		<is-icon v-if="loading" name="loading"></is-icon>
-		<is-icon :name="icon" v-if="icon && !loading"></is-icon>
+		<Icon v-if="loading" name="loading"></Icon>
+		<Icon :name="icon" v-if="icon && !loading"></Icon>
 		<span v-if="$slots.default"><slot></slot></span>
 	</button>
 </template>
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue'
-import IsIcon from '@/components/Icon/index.vue'
+import Icon from '@/components/Icon/index.vue'
 
 type TButtonType = 'default' | 'primary' | 'info' | 'warning' | 'success' | 'error' | 'text'
 type TButtonSize = 'large' | 'small'
@@ -22,7 +22,7 @@ interface IButtonProps {
 }
 
 export default defineComponent({
-	components: { IsIcon },
+	components: { Icon },
 	props: {
 		type: {
 			type: String as PropType<TButtonType>,
