@@ -22,6 +22,7 @@ interface IButtonProps {
 }
 
 export default defineComponent({
+	name: 'PlButton',
 	components: { Icon },
 	props: {
 		type: {
@@ -52,13 +53,13 @@ export default defineComponent({
 		const { type, disabled, loading, round, size } = props as IButtonProps
 		const classObj = computed(() => {
 			return [
-				'iS-button',
-				`iS-button-${type}`,
+				'pl-button',
+				`pl-button-${type}`,
 				{
-					'iS-button-disabled': disabled,
-					'iS-button-loading': loading,
-					'iS-button-round': round,
-					[`iS-button-${size}`]: size,
+					'pl-button-disabled': disabled,
+					'pl-button-loading': loading,
+					'pl-button-round': round,
+					[`pl-button-${size}`]: size,
 				},
 			]
 		})

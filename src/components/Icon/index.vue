@@ -1,5 +1,5 @@
 <template>
-	<svg class="iS-icon" :style="styleObj">
+	<svg class="pl-icon" :style="styleObj">
 		<use :xlink:href="`#icon-${name}`"></use>
 	</svg>
 </template>
@@ -7,6 +7,7 @@
 import { computed, defineComponent } from 'vue'
 
 export default defineComponent({
+	name:'PlIcon',
 	props: {
 		name: {
 			type: String,

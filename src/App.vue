@@ -18,7 +18,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import Icon from './components/Icon/index.vue'
-import Button from './components/Button/index.vue'
+import Button from './components/Button/button.vue'
 
 export default defineComponent({
 	name: 'App',
